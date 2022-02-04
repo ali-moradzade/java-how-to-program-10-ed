@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="BasePlusCommissionEmployee" package="best" visibility="public" xPosition="1228.0" yPosition="1301.0">
+      <Fields>
+        <Field name="baseSalary" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="String" name="socialSecurityNumber"/>
+          <Argument type="Date" name="birthDate"/>
+          <Argument type="double" name="grossSales"/>
+          <Argument type="double" name="commissionRate"/>
+          <Argument type="double" name="baseSalary"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setBaseSalary" returnType="void" visibility="public">
+          <Argument type="double" name="baseSalary"/>
+        </Method>
+        <Method name="getBaseSalary" returnType="double" visibility="public"/>
+        <Method name="earnings" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CommissionEmployee" package="best" visibility="public" xPosition="1304.0" yPosition="1001.0">
+      <Fields>
+        <Field name="grossSales" type="double" visibility="private"/>
+        <Field name="commissionRate" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="String" name="socialSecurityNumber"/>
+          <Argument type="Date" name="birthDate"/>
+          <Argument type="double" name="grossSales"/>
+          <Argument type="double" name="commissionRate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setGrossSales" returnType="void" visibility="public">
+          <Argument type="double" name="grossSales"/>
+        </Method>
+        <Method name="getGrossSales" returnType="double" visibility="public"/>
+        <Method name="setCommissionRate" returnType="void" visibility="public">
+          <Argument type="double" name="commissionRate"/>
+        </Method>
+        <Method name="getCommissionRate" returnType="double" visibility="public"/>
+        <Method name="earnings" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Date" package="best" visibility="public" xPosition="911.0" yPosition="827.0">
+      <Fields>
+        <Field name="month" type="int" visibility="private"/>
+        <Field name="day" type="int" visibility="private"/>
+        <Field name="year" type="int" visibility="private"/>
+        <Field name="daysPerMonth" type="int[]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="monthsName" type="String[]" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="day"/>
+          <Argument type="int" name="year"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="monthString"/>
+          <Argument type="int" name="day"/>
+          <Argument type="int" name="year"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="month"/>
+          <Argument type="int" name="day"/>
+          <Argument type="int" name="year"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="validate" returnType="void" visibility="public" isStatic="true" isFinal="true">
+          <Argument type="int" name="month"/>
+          <Argument type="int" name="day"/>
+          <Argument type="int" name="year"/>
+        </Method>
+        <Method name="getMonth" returnType="int" visibility="public"/>
+        <Method name="getDay" returnType="int" visibility="public"/>
+        <Method name="getYear" returnType="int" visibility="public"/>
+        <Method name="nextDay" returnType="void" visibility="public"/>
+        <Method name="displayDate" returnType="void" visibility="public"/>
+        <Method name="format1String" returnType="String" visibility="private"/>
+        <Method name="format2String" returnType="String" visibility="private"/>
+        <Method name="format3String" returnType="String" visibility="private"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Employee" package="best" visibility="public" isAbstract="true" xPosition="1456.0" yPosition="518.0">
+      <Fields>
+        <Field name="firstName" type="String" visibility="private" isFinal="true"/>
+        <Field name="lastName" type="String" visibility="private" isFinal="true"/>
+        <Field name="socialSecurityNumber" type="String" visibility="private" isFinal="true"/>
+        <Field name="birthDate" type="Date" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="String" name="socialSecurityNumber"/>
+          <Argument type="Date" name="birthDate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getFirstName" returnType="String" visibility="public"/>
+        <Method name="getLastName" returnType="String" visibility="public"/>
+        <Method name="getSocialSecurityNumber" returnType="String" visibility="public"/>
+        <Method name="getBirthDate" returnType="Date" visibility="public"/>
+        <Method name="earnings" returnType="double" visibility="public" isAbstract="true"/>
+        <Method name="getPaymentAmount" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HourlyEmployee" package="best" visibility="public" xPosition="996.0" yPosition="85.0">
+      <Fields>
+        <Field name="wage" type="double" visibility="private"/>
+        <Field name="hours" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="String" name="socialSecurityNumber"/>
+          <Argument type="Date" name="birthDate"/>
+          <Argument type="double" name="wage"/>
+          <Argument type="double" name="hours"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setWage" returnType="void" visibility="public">
+          <Argument type="double" name="wage"/>
+        </Method>
+        <Method name="getWage" returnType="double" visibility="public"/>
+        <Method name="setHours" returnType="void" visibility="public">
+          <Argument type="double" name="hours"/>
+        </Method>
+        <Method name="getHours" returnType="double" visibility="public"/>
+        <Method name="earnings" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Invoice" package="best" visibility="public" xPosition="1961.0" yPosition="243.0">
+      <Fields>
+        <Field name="partNumber" type="String" visibility="private" isFinal="true"/>
+        <Field name="partDescription" type="String" visibility="private" isFinal="true"/>
+        <Field name="pricePerItem" type="double" visibility="private"/>
+        <Field name="quantity" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="partNumber"/>
+          <Argument type="String" name="partDescription"/>
+          <Argument type="double" name="pricePerItem"/>
+          <Argument type="int" name="quantity"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPartNumber" returnType="String" visibility="public"/>
+        <Method name="getPartDescription" returnType="String" visibility="public"/>
+        <Method name="setPricePerItem" returnType="void" visibility="public">
+          <Argument type="double" name="pricePerItem"/>
+        </Method>
+        <Method name="getPricePerItem" returnType="double" visibility="public"/>
+        <Method name="setQuantity" returnType="void" visibility="public">
+          <Argument type="int" name="quantity"/>
+        </Method>
+        <Method name="getQuantity" returnType="int" visibility="public"/>
+        <Method name="getPaymentAmount" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PayableInterfaceTest" package="best" visibility="public" xPosition="1762.0" yPosition="113.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PieceWorker" package="best" visibility="public" xPosition="668.0" yPosition="555.0">
+      <Fields>
+        <Field name="wage" type="double" visibility="private"/>
+        <Field name="pieces" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="String" name="socialSecurityNumber"/>
+          <Argument type="Date" name="birthDate"/>
+          <Argument type="double" name="wage"/>
+          <Argument type="int" name="pieces"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setWage" returnType="void" visibility="public">
+          <Argument type="double" name="wage"/>
+        </Method>
+        <Method name="getWage" returnType="double" visibility="public"/>
+        <Method name="setPieces" returnType="void" visibility="public">
+          <Argument type="int" name="pieces"/>
+        </Method>
+        <Method name="getPieces" returnType="int" visibility="public"/>
+        <Method name="earnings" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SalariedEmployee" package="best" visibility="public" xPosition="2009.0" yPosition="668.0">
+      <Fields>
+        <Field name="weeklySalary" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="String" name="socialSecurityNumber"/>
+          <Argument type="Date" name="birthDate"/>
+          <Argument type="double" name="weeklySalary"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getWeeklySalary" returnType="double" visibility="public"/>
+        <Method name="setWeeklySalary" returnType="void" visibility="public">
+          <Argument type="double" name="weeklySalary"/>
+        </Method>
+        <Method name="earnings" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Payable" package="best" visibility="public" xPosition="1697.0" yPosition="363.0">
+      <Methods>
+        <Method name="getPaymentAmount" returnType="double" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="best.SalariedEmployee" target="best.Employee"/>
+    <IsRelation name="is" source="best.BasePlusCommissionEmployee" target="best.CommissionEmployee"/>
+    <IsRelation name="is" source="best.HourlyEmployee" target="best.Employee"/>
+    <IsRelation name="is" source="best.PieceWorker" target="best.Employee"/>
+    <UseRelation source="best.Employee" target="best.Date" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="best.Employee" target="best.Payable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="best.Invoice" target="best.Payable"/>
+    <IsRelation name="is" source="best.CommissionEmployee" target="best.Employee"/>
+    <HasRelation name="birthDate" source="best.Employee" target="best.Date" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
